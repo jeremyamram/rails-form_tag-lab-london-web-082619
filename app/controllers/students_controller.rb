@@ -4,12 +4,8 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
-  def show
-    @student = Student.find(params[:id])
-  end
-
   def new
-  
+    @student = Student.new
   end
 
   def create
@@ -17,5 +13,11 @@ class StudentsController < ApplicationController
     
     redirect_to student_path(@student)
   end
+
+  def show
+    @student = Student.find(params[:id])
+  end
+
+ 
 
 end
